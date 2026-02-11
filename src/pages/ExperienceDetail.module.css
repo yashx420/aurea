@@ -901,7 +901,7 @@
    ========================================================================== */
 
 .mobileWrapper {
-  background: var(--color-bg-main);
+  background: #ffffff;
   min-height: 100vh;
   padding-top: 20px;
   padding-bottom: 60px;
@@ -921,7 +921,7 @@
 
 .mobileInfoSection {
   padding: 30px 20px;
-  background: var(--color-bg-main);
+  background: #ffffff;
 }
 
 .mobileCategory {
@@ -941,7 +941,7 @@
   font-size: 2.2rem;
   line-height: 1.1;
   margin-bottom: 8px;
-  color: var(--color-white);
+  color: #1a1a1a;
   font-family: var(--font-header);
 }
 
@@ -950,7 +950,7 @@
   font-style: italic;
   opacity: 0.8;
   margin-bottom: 20px;
-  color: #fff;
+  color: #666;
 }
 
 .mobileQuickMeta {
@@ -958,8 +958,8 @@
   flex-wrap: wrap;
   gap: 15px;
   padding: 15px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .mMetaItem {
@@ -967,7 +967,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #444;
 }
 
 .mobileBookingSection {
@@ -1013,7 +1013,7 @@
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #888;
+  color: #555;
   margin-bottom: 10px;
 }
 
@@ -1092,13 +1092,13 @@
 .mTabs button {
   padding: 12px 0;
   font-size: 1rem;
-  color: #888;
+  color: #666;
   font-weight: 600;
   position: relative;
 }
 
 .mTabs button.mActiveTab {
-  color: white;
+  color: var(--color-primary);
 }
 
 .mTabs button.mActiveTab::after {
@@ -1112,7 +1112,7 @@
 }
 
 .mTabContent {
-  color: rgba(255, 255, 255, 0.9);
+  color: #333;
   line-height: 1.7;
 }
 
@@ -1149,7 +1149,7 @@
 .mobileRelatedSection h3 {
   font-size: 1.5rem;
   margin-bottom: 25px;
-  color: white;
+  color: #1a1a1a;
 }
 
 .mRelatedScroll {

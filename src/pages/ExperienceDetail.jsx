@@ -162,8 +162,15 @@ const ExperienceDetail = () => {
       {/* MOBILE ONLY LAYOUT BLOCK */}
       <div className={styles.mobileView}>
         {/* 1. Image at the top */}
-        <div className={styles.mobileHeroImage}>
-          <img src={experience.image} alt={experience.title} />
+        <div
+          className={styles.mobileHeroImage}
+          onClick={() => setIsImageModalOpen(true)}
+        >
+          <img
+            src={experience.image}
+            alt={experience.title}
+            style={{ cursor: "zoom-in" }}
+          />
         </div>
 
         {/* 2. Info Section */}
