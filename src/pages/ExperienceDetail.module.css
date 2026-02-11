@@ -561,35 +561,42 @@
     flex-direction: column;
     margin-top: 0;
     padding: 0;
+    background: var(--color-bg-main);
   }
 
   .detailsCol {
     order: 2;
-    padding: 20px;
+    padding: 30px 20px;
   }
 
   .sidebar {
     order: 1;
     position: static;
     margin: 0;
-    padding: 10px 15px;
-    transform: translateY(-20px); /* Slight tuck for overlap effect */
+    padding: 0 20px 20px;
+    transform: none !important; /* REMOVE overlapping transforms */
     z-index: 10;
   }
 
   .bookingCard {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     background: var(--color-white);
+    padding: 30px;
   }
 
   .tabs {
     overflow-x: auto;
     white-space: nowrap;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     -webkit-overflow-scrolling: touch;
     margin-top: 0;
     justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tabContent {
+    padding-top: 20px;
   }
 }
 

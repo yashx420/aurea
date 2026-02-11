@@ -94,10 +94,10 @@ img {
 }
 
 /*
-- [ ] Mobile Layout Overhaul <!-- id: 52 -->
-  - [ ] Experience Detail: Implement new vertical stacked layout for mobile <!-- id: 53 -->
-  - [ ] Home: Add spacing between all sections <!-- id: 54 -->
-  - [ ] Git: Push final mobile overhaul <!-- id: 55 -->
+- [ ] Final Mobile Polish <!-- id: 56 -->
+  - [ ] Experience Detail: Complete redesign of mobile layout (stacked, no overlaps) <!-- id: 57 -->
+  - [ ] Home: Add spacing above/below "Curated for You" header on mobile <!-- id: 58 -->
+  - [ ] Git: Push final confirmed mobile polish <!-- id: 59 -->
 */
 
 @media (min-width: 768px) {

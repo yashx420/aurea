@@ -204,13 +204,21 @@
     margin-bottom: 60px; /* Add gap */
   }
 
+  .sectionHeader {
+    text-align: center;
+    margin-bottom: 60px; /* Increased space below title */
+    padding: 40px 20px 0; /* Add space above title */
+  }
+
   .sectionTitle {
     font-size: 2.2rem;
     text-align: center;
+    margin-top: 15px; /* Extra breathing space between subtitle and title */
   }
 
   .viewAll {
     justify-content: center;
+    margin-top: 40px;
   }
 }
 
