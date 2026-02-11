@@ -323,12 +323,19 @@
   .layout {
     flex-direction: column;
     gap: 20px;
+    padding-bottom: 40px;
   }
 
   .mobileFilterBtn {
     display: flex;
     width: 100%;
     justify-content: center;
+    background: rgba(74, 18, 48, 0.8);
+    border-color: var(--color-gold);
+    color: var(--color-white);
+    padding: 14px;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
   }
 
   .sidebar {
@@ -337,12 +344,15 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background: #551c37; /* Lighter burgundy solid for mobile menu opacity */
-    z-index: 2000;
-    padding: 20px;
+    background: rgba(74, 18, 48, 0.98); /* Deep premium burgundy */
+    backdrop-filter: blur(25px);
+    z-index: 2005;
+    padding: 40px 20px;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow-y: auto;
+    border: none;
+    border-radius: 0;
   }
 
   .sidebar.open {
@@ -351,6 +361,14 @@
 
   .sidebarHeader {
     display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+  }
+
+  .sidebarHeader h3 {
+    color: var(--color-gold);
+    font-size: 1.5rem;
   }
 }
 

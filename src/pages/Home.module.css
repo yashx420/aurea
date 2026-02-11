@@ -156,7 +156,7 @@
 
 @media (max-width: 1024px) {
   .featuredWrapper {
-    flex-direction: column-reverse; /* Video on top on mobile? Or bottom? Let's keep content first */
+    flex-direction: column; /* Content first */
     gap: 40px;
   }
 
@@ -165,12 +165,26 @@
   }
 
   .featuredVideo {
-    width: 100%;
-    position: static;
+    display: none; /* Hide reels on tablets/phones as requested */
   }
 
   .videoPlayer {
     min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredSection {
+    padding-top: 60px;
+    margin-top: 80px;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .viewAll {
+    justify-content: center;
   }
 }
 
@@ -445,21 +459,28 @@
 
 @media (max-width: 768px) {
   .howTitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
-  .timelineLine,
+  .howDesc {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  .timelineLine {
+    left: 20px;
+  }
   .timelineDot {
-    left: 30px;
+    left: 20px;
   }
 
   .timelineItem {
     justify-content: flex-start;
-    padding-left: 70px;
+    padding-left: 50px;
     padding-right: 0;
+    margin-bottom: 40px;
   }
 
   .timelineItem.right {
-    padding-left: 70px;
+    padding-left: 50px;
   }
 
   .timelineItem.left .journeyCard,
@@ -467,6 +488,23 @@
     margin: 0;
     width: 100%;
     max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .journeyCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .stepNum {
+    font-size: 2rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  .iconBox {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
   }
 }
 
@@ -533,13 +571,20 @@
 }
 
 .tickerLogo {
-  width: 180px;
-  height: 80px;
+  width: 120px; /* Scaled down for mobile flow */
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .tickerLogo {
+    width: 180px;
+    height: 80px;
+  }
 }
 
 .tickerLogo:hover {

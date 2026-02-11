@@ -100,9 +100,16 @@
 
 .benefitsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
 }
 
 .benefitCard {
@@ -278,7 +285,23 @@
 /* Responsive */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
   }
 
   .guidelinesGrid {
@@ -288,6 +311,14 @@
   .contactDetails {
     flex-direction: column;
     gap: 30px;
+  }
+
+  .ctaBox {
+    padding: 40px 20px;
+  }
+
+  .ctaBox h2 {
+    font-size: 1.8rem;
   }
 }
 

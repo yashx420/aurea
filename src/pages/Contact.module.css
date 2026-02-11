@@ -59,6 +59,12 @@
   margin-bottom: 12px;
 }
 
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
 .sectionDesc {
   color: var(--color-ivory);
   margin-bottom: 40px;
@@ -242,5 +248,19 @@
 
   .infoColumn {
     padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentSection {
+    padding: 40px 0;
+  }
+
+  .formColumn {
+    padding: 30px 20px;
+  }
+
+  .form h3 {
+    font-size: 1.3rem;
   }
 }

@@ -160,11 +160,11 @@
   color: var(--color-charcoal);
   display: inline-block;
   padding: 6px 14px;
-  font-size: 0.85rem;
+  font-size: 0.75rem; /* Slightly smaller for mobile */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
   border-radius: 2px;
 }
 
@@ -173,6 +173,13 @@
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   font-family: var(--font-header);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-sm);
+  }
 }
 
 .soldBy {
@@ -239,7 +246,25 @@
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
+    padding-top: 80px;
     padding-bottom: 40px;
+  }
+
+  .heroInner {
+    padding: 0 15px;
+  }
+
+  .heroImageWrapper {
+    margin-top: 20px;
+  }
+
+  .quickMeta {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .quickMeta span {
+    font-size: 0.9rem;
   }
 }
 
@@ -516,10 +541,19 @@
 @media (max-width: 1024px) {
   .mainContent {
     grid-template-columns: 1fr;
+    margin-top: 40px;
   }
 
   .sidebar {
     position: static;
+    margin-top: 30px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

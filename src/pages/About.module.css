@@ -30,6 +30,19 @@
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  .heroSubtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+
 .introContent {
   text-align: center;
   max-width: 800px;
@@ -56,9 +69,21 @@
 
 .categoryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .leadText {
+    font-size: 1.2rem;
+    padding: 0 15px;
+  }
 }
 
 .categoryCard {
@@ -108,6 +133,21 @@
   max-width: 900px;
   margin: 40px auto;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .visionBox {
+    padding: 40px 20px;
+    margin: 20px 10px;
+  }
+
+  .visionBox h2 {
+    font-size: 1.8rem;
+  }
+
+  .visionText {
+    font-size: 1rem;
+  }
 }
 
 .visionIcon {

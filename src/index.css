@@ -77,6 +77,22 @@ img {
   padding: 0 var(--spacing-sm);
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  h3 {
+    font-size: 1.4rem !important;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     padding: 0 var(--spacing-md);

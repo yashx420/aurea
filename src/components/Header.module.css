@@ -57,10 +57,25 @@
   margin-bottom: 0;
 }
 
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  .logoImg {
+    height: 50px;
+  }
+}
+
 .scrolled .logoImg {
   height: 60px;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .scrolled .logoImg {
+    height: 45px;
+  }
 }
 
 .logoImg:hover {
@@ -273,28 +288,65 @@
 }
 
 @media (max-width: 1023px) {
-  .navActive {
-    display: flex;
+  .nav {
+    display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed; /* Fixed for full screen feel */
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--color-white);
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-medium);
-    animation: slideDown 0.3s ease forwards;
+    height: 100vh;
+    background-color: rgba(74, 18, 48, 0.98); /* Deep burgundy */
+    backdrop-filter: blur(20px);
+    padding: 100px 30px 40px; /* Space for header at top */
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
   }
 
-  .ctaBtn {
-    display: none;
+  .navActive {
+    display: flex;
+    animation: fadeIn 0.4s ease forwards;
+  }
+
+  .nav a,
+  .dropbtn {
+    font-size: 1.5rem !important; /* Larger for mobile taps */
+    color: var(--color-white) !important;
   }
 
   .dropdownContent {
     position: static;
-    display: block;
-    box-shadow: none;
-    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding-left: 0;
+    gap: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .dropdownContent a {
+    font-size: 1.1rem !important;
+    padding: 5px 0 !important;
+  }
+
+  .allLink {
+    background: transparent !important;
+    border: none !important;
+    color: var(--color-gold) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

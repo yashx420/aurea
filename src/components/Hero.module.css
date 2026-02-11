@@ -216,17 +216,70 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 100svh; /* More stable than 100vh on mobile */
+    min-height: 500px;
+    padding-top: 60px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-top: 10px;
+    line-height: 1.1;
+  }
+
+  .highlight {
+    font-size: 2.4rem;
+  }
+
+  .giftText {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin: 20px auto;
+    max-width: 300px;
   }
 
   .actions {
     flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
     justify-content: center;
+    padding: 14px 24px;
+    font-size: 0.85rem;
+  }
+
+  .scrollIndicator {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 20px;
+    align-items: center;
+    opacity: 0.6;
   }
 }
