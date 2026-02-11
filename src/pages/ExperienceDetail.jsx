@@ -272,9 +272,31 @@ const ExperienceDetail = () => {
           <div className={styles.mTabContent}>
             {activeTab === "description" ? (
               <div className={styles.mDescription}>
-                {experience.description.split("\n").map((line, i) => (
-                  <p key={i}>{renderFormattedText(line)}</p>
-                ))}
+                {experience.description.split("\n").map((line, i) => {
+                  if (line.startsWith("### ")) {
+                    return (
+                      <h3 key={i} className={styles.mDescHeader}>
+                        {renderFormattedText(line.replace("### ", ""))}
+                      </h3>
+                    );
+                  }
+                  if (line.startsWith("- ")) {
+                    return (
+                      <div key={i} className={styles.mDescListItem}>
+                        <div className={styles.mBullet}>•</div>
+                        <div>{renderFormattedText(line.replace("- ", ""))}</div>
+                      </div>
+                    );
+                  }
+                  if (line.trim() === "") {
+                    return <br key={i} />;
+                  }
+                  return (
+                    <p key={i} className={styles.mDescParagraph}>
+                      {renderFormattedText(line)}
+                    </p>
+                  );
+                })}
               </div>
             ) : (
               <ul className={styles.mInclusions}>
