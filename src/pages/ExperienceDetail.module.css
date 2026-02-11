@@ -5,6 +5,29 @@
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 0;
+  }
+}
+
+.mobileView {
+  display: none;
+}
+
+.desktopView {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .mobileView {
+    display: block;
+  }
+  .desktopView {
+    display: none;
+  }
+}
+
 .hero {
   position: relative;
   min-height: 80vh; /* Taller to accommodate split content */
@@ -173,116 +196,6 @@
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   font-family: var(--font-header);
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.2rem;
-    margin-bottom: var(--spacing-sm);
-  }
-}
-
-.soldBy {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0.8;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.quickMeta {
-  display: flex;
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.quickMeta span {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .heroTextContent {
-    padding-right: 0;
-    text-align: center;
-    order: 1;
-  }
-
-  .heroImageWrapper {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    order: 2;
-  }
-
-  .quickMeta {
-    justify-content: center;
-  }
-
-  .soldBy {
-    justify-content: center;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding-top: 100px; /* Space for navbar */
-    padding-bottom: 40px;
-  }
-
-  .heroInner {
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .heroTextContent {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .heroImageWrapper {
-    margin-top: 10px;
-    width: 100%;
-    max-width: 320px; /* Don't let it get too huge on mobile */
-  }
-
-  .quickMeta {
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-  }
-
-  .quickMeta span {
-    font-size: 0.85rem;
-  }
-
-  .title {
-    font-size: 2.2rem;
-    line-height: 1.1;
-  }
 }
 
 .mainContent {
@@ -553,61 +466,6 @@
   margin-top: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-@media (max-width: 1024px) {
-  .mainContent {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    padding: 0;
-    background: var(--color-bg-main);
-  }
-
-  .detailsCol {
-    order: 2;
-    padding: 30px 20px;
-  }
-
-  .sidebar {
-    order: 1;
-    position: static;
-    margin: 0;
-    padding: 0 20px 20px;
-    transform: none !important; /* REMOVE overlapping transforms */
-    z-index: 10;
-  }
-
-  .bookingCard {
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    background: var(--color-white);
-    padding: 30px;
-  }
-
-  .tabs {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 15px;
-    -webkit-overflow-scrolling: touch;
-    margin-top: 0;
-    justify-content: flex-start;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .tabContent {
-    padding-top: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 2rem;
-  }
-
-  .hero {
-    height: 40vh;
-  }
 }
 
 /* Dark mode styles */
