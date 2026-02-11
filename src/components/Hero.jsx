@@ -4,13 +4,33 @@ import { MousePointer2, ChevronRight } from "lucide-react";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
-  const heroImages = [
+  const desktopImages = [
     "/hero-bg.png",
     "https://aurea.gift/wp-content/uploads/2026/01/MerakiWebsitePhotos_583e0b96-d5c0-434b-890e-1005d5e16695.webp", // Royal Couple Escape
     "https://aurea.gift/wp-content/uploads/2026/01/TIBC0535.jpg", // Bouldering
   ];
 
+  const mobileImages = [
+    "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1287&auto=format&fit=crop", // Santorini Vertical
+    "https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1287&auto=format&fit=crop", // Romantic Dinner Vertical
+    "https://aurea.gift/wp-content/uploads/2026/01/TIBC0535.jpg", // Kept same
+  ];
+
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const heroImages = isMobile ? mobileImages : desktopImages;
 
   React.useEffect(() => {
     // Preload local images

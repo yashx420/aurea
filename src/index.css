@@ -94,10 +94,10 @@ img {
 }
 
 /*
-- [ ] Mobile Refinements & Bug Fixes <!-- id: 44 -->
-  - [ ] Header: Fix mobile menu close button and dropdown logic <!-- id: 45 -->
-  - [ ] Home: Center featured experiences and fix hero mobile layout <!-- id: 46 -->
-  - [ ] Experience Detail: Move pricing box under banner and fix clipping <!-- id: 47 -->
+- [ ] Final Mobile Refinements <!-- id: 48 -->
+  - [ ] Hero: Implement mobile-only images for first and second slides <!-- id: 49 -->
+  - [ ] Home: Widen featured experience cards and refine centering <!-- id: 50 -->
+  - [ ] Git: Push final refinements <!-- id: 51 -->
 */
 
 @media (min-width: 768px) {

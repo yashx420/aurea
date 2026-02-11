@@ -121,6 +121,17 @@
   color: var(--color-white);
 }
 
+@media (max-width: 768px) {
+  .card {
+    border-radius: 0; /* Full bleed look on mobile */
+    width: 100%;
+  }
+
+  .imageWrapper {
+    height: 220px; /* Slightly shorter for vertical stack */
+  }
+}
+
 /* Dark mode styles */
 [data-theme="dark"] .card {
   background-color: #2d2d2d;
