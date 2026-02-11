@@ -560,18 +560,27 @@
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    padding-top: 20px;
+    padding: 0;
   }
 
   .detailsCol {
     order: 2;
+    padding: 20px;
   }
 
   .sidebar {
     order: 1;
     position: static;
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin: 0;
+    padding: 10px 15px;
+    transform: translateY(-20px); /* Slight tuck for overlap effect */
+    z-index: 10;
+  }
+
+  .bookingCard {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background: var(--color-white);
   }
 
   .tabs {
@@ -579,7 +588,8 @@
     white-space: nowrap;
     padding-bottom: 10px;
     -webkit-overflow-scrolling: touch;
-    margin-top: 20px;
+    margin-top: 0;
+    justify-content: flex-start;
   }
 }
 

@@ -94,10 +94,10 @@ img {
 }
 
 /*
-- [ ] Final Mobile Refinements <!-- id: 48 -->
-  - [ ] Hero: Implement mobile-only images for first and second slides <!-- id: 49 -->
-  - [ ] Home: Widen featured experience cards and refine centering <!-- id: 50 -->
-  - [ ] Git: Push final refinements <!-- id: 51 -->
+- [ ] Mobile Layout Overhaul <!-- id: 52 -->
+  - [ ] Experience Detail: Implement new vertical stacked layout for mobile <!-- id: 53 -->
+  - [ ] Home: Add spacing between all sections <!-- id: 54 -->
+  - [ ] Git: Push final mobile overhaul <!-- id: 55 -->
 */
 
 @media (min-width: 768px) {

@@ -199,8 +199,9 @@
 
 @media (max-width: 768px) {
   .featuredSection {
-    padding-top: 60px;
-    margin-top: 40px;
+    padding-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px; /* Add gap */
   }
 
   .sectionTitle {
@@ -483,6 +484,11 @@
 }
 
 @media (max-width: 768px) {
+  .howItWorks {
+    padding: 60px 0;
+    margin-bottom: 60px; /* Add gap */
+  }
+
   .howTitle {
     font-size: 2.2rem;
   }
