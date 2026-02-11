@@ -224,24 +224,33 @@
     text-align: center;
   }
 
+  .heroBackground {
+    background-position: center bottom; /* Better for vertical mobile views */
+  }
+
   .overlay {
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.9) 100%
     );
   }
 
   .content {
     max-width: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title {
     font-size: 2.2rem;
     margin-top: 10px;
     line-height: 1.1;
+    text-align: center;
   }
 
   .highlight {
@@ -256,7 +265,8 @@
   .description {
     font-size: 0.95rem;
     margin: 20px auto;
-    max-width: 300px;
+    max-width: 320px;
+    text-align: center;
   }
 
   .actions {

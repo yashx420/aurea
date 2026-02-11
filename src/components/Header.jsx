@@ -21,6 +21,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const [userRole, setUserRole] = useState(null);
   const cartCount = getCartCount();
 
@@ -59,15 +60,31 @@ const Header = () => {
           </Link>
           <div
             className={styles.dropdown}
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            onMouseEnter={() =>
+              !window.matchMedia("(max-width: 1023px)").matches &&
+              setIsDropdownOpen(true)
+            }
+            onMouseLeave={() =>
+              !window.matchMedia("(max-width: 1023px)").matches &&
+              setIsDropdownOpen(false)
+            }
           >
-            <button className={styles.dropbtn}>
+            <button
+              className={styles.dropbtn}
+              onClick={() => {
+                if (window.matchMedia("(max-width: 1023px)").matches) {
+                  setIsMobileDropdownOpen(!isMobileDropdownOpen);
+                }
+              }}
+            >
               Explore Experiences{" "}
-              <ChevronDown size={14} className={styles.chevron} />
+              <ChevronDown
+                size={14}
+                className={`${styles.chevron} ${isDropdownOpen || isMobileDropdownOpen ? styles.chevronRotated : ""}`}
+              />
             </button>
             <AnimatePresence>
-              {isDropdownOpen && (
+              {(isDropdownOpen || isMobileDropdownOpen) && (
                 <motion.div
                   className={styles.dropdownContent}
                   initial={{ opacity: 0, y: 10 }}
@@ -81,6 +98,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     All Experiences
@@ -90,6 +108,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Adventure & Thrill
@@ -99,6 +118,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Corporate Experience
@@ -108,6 +128,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Creative & Artistic
@@ -117,6 +138,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Culinary & Gourmet
@@ -126,6 +148,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Culture & Heritage
@@ -135,6 +158,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Gaming & Entertainment
@@ -144,6 +168,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Luxury & Lifestyle
@@ -153,6 +178,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Special Occasion Experiences
@@ -162,6 +188,7 @@ const Header = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                       setIsDropdownOpen(false);
+                      setIsMobileDropdownOpen(false);
                     }}
                   >
                     Wellness & Relaxation
