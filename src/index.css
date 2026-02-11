@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+@import "./styles/variables.css";
+
+html {
+  background-color: #000; /* Dark base for translucent backgrounds */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode color overrides */
+[data-theme="dark"] {
+  --color-ivory: #ffffff; /* Stay white/light in dark mode */
+  --color-bg: #000000;
+  --color-bg-light: #1e1e1e;
+  --color-bg-main: #0c0008; /* Deepest plum-black for dark mode */
+  --color-text-main: #ffffff;
+  --color-charcoal: #ffffff; /* Labels should be white in dark mode */
+  --color-grey: #cccccc;
+  --color-grey-light: #444444;
+  --color-grey-dark: #eeeeee;
+  --color-off-white: #ffffff;
+  --color-white: #ffffff;
+  --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.8);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.9);
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* Luxury Utilities */
+.plum-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+}
+
+.gold-text {
+  color: var(--color-gold);
+}
+
+.section-padding {
+  padding: var(--spacing-lg) 0;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: var(--spacing-xl) 0;
+  }
+}

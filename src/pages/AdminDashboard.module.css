@@ -1,0 +1,411 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg-light);
+  padding-top: 0;
+}
+
+.actionsBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.createBtn {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.createBtn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.listingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.listingCard {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.listingCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cardIterimage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.formCard {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-gray-700);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.variationInput {
+  display: flex;
+  gap: 10px;
+}
+
+.addBtn {
+  padding: 0 20px;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.variationList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.variationList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f9f9f9;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.fileUpload {
+  border: 2px dashed #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #888;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submitBtn {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.statusBadge.pending {
+  background: #fff3cd;
+  color: #856404;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.statusBadge.approved {
+  background: #d4edda;
+  color: #155724;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.statusBadge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+.brand {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.admin {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+}
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.sideNav button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.sideNav button.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.navSecondary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+.navSecondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.logout:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #ff6b6b;
+}
+
+.main {
+  flex-grow: 1;
+  margin-left: 260px;
+  padding: var(--spacing-lg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.approvalSection h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.approvalList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.approvalItem {
+  background-color: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.itemInfo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.itemInfo p {
+  font-size: 0.85rem;
+  color: var(--color-grey);
+}
+
+.itemActions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.viewBtn {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  color: var(--color-grey-dark);
+}
+
+.approveBtn {
+  background-color: #2e7d32;
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rejectBtn {
+  background-color: transparent;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.helperText {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  margin-top: -4px;
+  font-style: italic;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tagBadge {
+  background-color: #f0f4f8;
+  color: var(--color-charcoal);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #dae1e7;
+}
+
+.tagRemoveBtn {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+}
+
+.tagRemoveBtn:hover {
+  color: #d32f2f;
+}
