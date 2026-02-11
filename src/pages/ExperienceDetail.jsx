@@ -166,11 +166,10 @@ const ExperienceDetail = () => {
           className={styles.mobileHeroImage}
           onClick={() => setIsImageModalOpen(true)}
         >
-          <img
-            src={experience.image}
-            alt={experience.title}
-            style={{ cursor: "zoom-in" }}
-          />
+          <img src={experience.image} alt={experience.title} />
+          <div className={styles.imageEnlargeBadge}>
+            <Maximize2 size={12} /> Click to Enlarge
+          </div>
         </div>
 
         {/* 2. Info Section */}
@@ -707,102 +706,102 @@ const ExperienceDetail = () => {
             </div>
           </section>
         )}
+      </div>
 
-        {/* Full Screen Image Modal */}
-        {isImageModalOpen && (
-          <div
-            className={styles.imageModalOverlay}
+      {/* Full Screen Image Modal - MOVED OUTSIDE DESKTOP VIEW */}
+      {isImageModalOpen && (
+        <div
+          className={styles.imageModalOverlay}
+          onClick={() => setIsImageModalOpen(false)}
+        >
+          <button
+            className={styles.closeButton}
             onClick={() => setIsImageModalOpen(false)}
           >
-            <button
-              className={styles.closeButton}
-              onClick={() => setIsImageModalOpen(false)}
-            >
-              <X size={32} />
-            </button>
-            <img
-              src={experience.image}
-              alt={experience.title}
-              className={styles.modalImage}
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        )}
+            <X size={32} />
+          </button>
+          <img
+            src={experience.image}
+            alt={experience.title}
+            className={styles.modalImage}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
-        {/* Write a Review Modal */}
-        {isReviewModalOpen && (
+      {/* Write a Review Modal - MOVED OUTSIDE DESKTOP VIEW */}
+      {isReviewModalOpen && (
+        <div
+          className={styles.modalOverlay}
+          onClick={() => setIsReviewModalOpen(false)}
+        >
           <div
-            className={styles.modalOverlay}
-            onClick={() => setIsReviewModalOpen(false)}
+            className={styles.reviewModal}
+            onClick={(e) => e.stopPropagation()}
           >
-            <div
-              className={styles.reviewModal}
-              onClick={(e) => e.stopPropagation()}
+            <button
+              className={styles.modalCloseBtn}
+              onClick={() => setIsReviewModalOpen(false)}
             >
-              <button
-                className={styles.modalCloseBtn}
-                onClick={() => setIsReviewModalOpen(false)}
-              >
-                <X size={24} />
+              <X size={24} />
+            </button>
+
+            <h3 className={styles.modalTitle}>Write a Review</h3>
+            <p className={styles.modalSubtitle}>How was your experience?</p>
+
+            <form onSubmit={handleSubmitReview} className={styles.reviewForm}>
+              <div className={styles.formGroup}>
+                <label>Rating</label>
+                <div className={styles.ratingSelect}>
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      className={styles.starBtn}
+                      onClick={() => setReviewRating(star)}
+                    >
+                      <Star
+                        size={32}
+                        fill={star <= reviewRating ? "#d4af37" : "none"}
+                        stroke={star <= reviewRating ? "#d4af37" : "#ccc"}
+                        strokeWidth={1.5}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Your Name</label>
+                <input
+                  type="text"
+                  value={reviewerName}
+                  onChange={(e) => setReviewerName(e.target.value)}
+                  placeholder="Enter your name"
+                  required
+                  className={styles.formInput}
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Review</label>
+                <textarea
+                  value={reviewText}
+                  onChange={(e) => setReviewText(e.target.value)}
+                  placeholder="Tell us about your experience..."
+                  rows={5}
+                  required
+                  className={styles.formTextarea}
+                />
+              </div>
+
+              <button type="submit" className={styles.submitReviewBtn}>
+                Submit Review
               </button>
-
-              <h3 className={styles.modalTitle}>Write a Review</h3>
-              <p className={styles.modalSubtitle}>How was your experience?</p>
-
-              <form onSubmit={handleSubmitReview} className={styles.reviewForm}>
-                <div className={styles.formGroup}>
-                  <label>Rating</label>
-                  <div className={styles.ratingSelect}>
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <button
-                        key={star}
-                        type="button"
-                        className={styles.starBtn}
-                        onClick={() => setReviewRating(star)}
-                      >
-                        <Star
-                          size={32}
-                          fill={star <= reviewRating ? "#d4af37" : "none"}
-                          stroke={star <= reviewRating ? "#d4af37" : "#ccc"}
-                          strokeWidth={1.5}
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label>Your Name</label>
-                  <input
-                    type="text"
-                    value={reviewerName}
-                    onChange={(e) => setReviewerName(e.target.value)}
-                    placeholder="Enter your name"
-                    required
-                    className={styles.formInput}
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label>Review</label>
-                  <textarea
-                    value={reviewText}
-                    onChange={(e) => setReviewText(e.target.value)}
-                    placeholder="Tell us about your experience..."
-                    rows={5}
-                    required
-                    className={styles.formTextarea}
-                  />
-                </div>
-
-                <button type="submit" className={styles.submitReviewBtn}>
-                  Submit Review
-                </button>
-              </form>
-            </div>
+            </form>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
