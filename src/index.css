@@ -94,10 +94,11 @@ img {
 }
 
 /*
-- [ ] Final Mobile Polish <!-- id: 56 -->
-  - [ ] Experience Detail: Complete redesign of mobile layout (stacked, no overlaps) <!-- id: 57 -->
-  - [ ] Home: Add spacing above/below "Curated for You" header on mobile <!-- id: 58 -->
-  - [ ] Git: Push final confirmed mobile polish <!-- id: 59 -->
+- [ ] Ultimate Mobile Redesign <!-- id: 60 -->
+  - [ ] Experience Detail: Implement dedicated mobile JSX structure (Image -> Title -> Pricing -> Description) <!-- id: 61 -->
+  - [ ] Home: Add spacing above/below "Curated for You" header on mobile <!-- id: 62 -->
+  - [ ] Home: Ensure general section spacing is consistent on mobile <!-- id: 63 -->
+  - [ ] Git: Push final confirmed mobile redesign <!-- id: 64 -->
 */
 
 @media (min-width: 768px) {

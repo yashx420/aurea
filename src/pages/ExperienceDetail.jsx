@@ -30,6 +30,17 @@ const ExperienceDetail = () => {
   const [reviewRating, setReviewRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [reviewerName, setReviewerName] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleSubmitReview = (e) => {
     e.preventDefault();
@@ -151,6 +162,113 @@ const ExperienceDetail = () => {
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
+
+  if (isMobile) {
+    return (
+      <div className={styles.mobileWrapper}>
+        <SEO
+          title={`${experience.title} | Aurea`}
+          description={experience.description.substring(0, 160)}
+        />
+        
+        {/* 1. Image at the top */}
+        <div className={styles.mobileHeroImage}>
+          <img src={experience.image} alt={experience.title} />
+        </div>
+
+        {/* 2. Info Section */}
+        <div className={styles.mobileInfoSection}>
+          <span className={styles.mobileCategory}>{experience.category}</span>
+          <h1 className={styles.mobileTitle}>{experience.title}</h1>
+          <p className={styles.mobileVendor}>Sold by: {experience.vendor}</p>
+          
+          <div className={styles.mobileQuickMeta}>
+            <div className={styles.mMetaItem}><Clock size={16} /> {experience.duration}</div>
+            <div className={styles.mMetaItem}><Users size={16} /> Up to {experience.groupSize}</div>
+            <div className={styles.mMetaItem}><MapPin size={16} /> {experience.location}</div>
+          </div>
+        </div>
+
+        {/* 3. Pricing & Booking Card (High Priority) */}
+        <div className={styles.mobileBookingSection}>
+          <div className={styles.mobileBookingCard}>
+            <div className={styles.mPriceHeader}>
+              <span>Price per head</span>
+              <span className={styles.mAmount}>₹{currentPrice.toLocaleString()}</span>
+            </div>
+
+            {experience.variants && (
+              <div className={styles.mVariantSelector}>
+                <label>Booking Type</label>
+                <div className={styles.mVariantOptions}>
+                  {experience.variants.map((v, i) => (
+                    <button 
+                      key={i} 
+                      className={selectedVariant?.name === v.name ? styles.mActiveVar : ""}
+                      onClick={() => setSelectedVariant(v)}
+                    >{v.name}</button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className={styles.mGiftToggle}>
+              <button 
+                className={giftType === "digital" ? styles.mActiveToggle : ""}
+                onClick={() => setGiftType("digital")}
+              >E-Voucher</button>
+              <button 
+                className={giftType === "physical" ? styles.mActiveToggle : ""}
+                onClick={() => setGiftType("physical")}
+              >Physical Pack</button>
+            </div>
+
+            <button className={styles.mPrimaryBtn} onClick={handleAddToCart}>
+              {addedToCart ? <><Check size={18} /> Added!</> : <><ShoppingCart size={18} /> Add to Cart</>}
+            </button>
+          </div>
+        </div>
+
+        {/* 4. Tabbed Description */}
+        <div className={styles.mobileDetailsSection}>
+          <div className={styles.mTabs}>
+            <button className={activeTab === "description" ? styles.mActiveTab : ""} onClick={() => setActiveTab("description")}>Description</button>
+            <button className={activeTab === "inclusions" ? styles.mActiveTab : ""} onClick={() => setActiveTab("inclusions")}>What's Included</button>
+          </div>
+          
+          <div className={styles.mTabContent}>
+            {activeTab === "description" ? (
+              <div className={styles.mDescription}>
+                {experience.description.split("\n").map((line, i) => (
+                  <p key={i}>{renderFormattedText(line)}</p>
+                ))}
+              </div>
+            ) : (
+              <ul className={styles.mInclusions}>
+                {inclusions.map((item, i) => (
+                  <li key={i}><CheckCircle2 size={16} /> {item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+
+        {/* 5. Related */}
+        {relatedExperiences.length > 0 && (
+          <div className={styles.mobileRelatedSection}>
+            <h3>More from {experience.vendor}</h3>
+            <div className={styles.mRelatedScroll}>
+              {relatedExperiences.map(exp => (
+                <div key={exp.id} className={styles.mRelatedCardWrap}>
+                  <ExperienceCard {...exp} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.wrapper}>

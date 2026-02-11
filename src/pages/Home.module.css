@@ -206,8 +206,13 @@
 
   .sectionHeader {
     text-align: center;
-    margin-bottom: 60px; /* Increased space below title */
-    padding: 40px 20px 0; /* Add space above title */
+    margin-bottom: 60px; /* Space below header */
+    padding: 60px 20px 0; /* Heavy space ABOVE Curated for You */
+  }
+
+  .subtitle {
+    display: block;
+    margin-bottom: 12px;
   }
 
   .sectionTitle {
